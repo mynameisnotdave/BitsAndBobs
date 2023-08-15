@@ -28,7 +28,11 @@ public class ArrayShift {
             for (int i = 0; i < a.length; i++) {
                 a[i] = Integer.parseInt(inputLine2[i]);
 
-            }System.out.println(Arrays.toString(a));
+            }
         }
+        int[] transNums = new int[a.length];
+        System.arraycopy(a, a.length-k, transNums, 0,k);
+        System.arraycopy(a, 0, transNums, k, a.length - k);
+        System.out.println(Arrays.toString(transNums));
     }
 }
